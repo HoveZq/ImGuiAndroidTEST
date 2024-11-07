@@ -26,13 +26,6 @@ public class FloatingMenu extends GLSurfaceView {
     public FloatingMenu(Context context) {
         super(context);
         setEGLContextClientVersion(3);
-        setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return false;
-            }
-        });
-        setZOrderOnTop(true);
         setBackgroundColor(Color.TRANSPARENT);
         setEGLConfigChooser(8, 8, 8, 8, 16, 0);
         getHolder().setFormat(PixelFormat.TRANSPARENT);
@@ -58,6 +51,6 @@ public class FloatingMenu extends GLSurfaceView {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
+        return false;
     }
 }
